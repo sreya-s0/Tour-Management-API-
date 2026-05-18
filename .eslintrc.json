@@ -1,0 +1,48 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:node/recommended"
+  ],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "rules": {
+    // Prettier integration
+    "prettier/prettier": "error",
+
+    // Allow logging with warnings
+    "no-console": "warn",
+
+    // Useful flexibility for real-world projects
+    "no-underscore-dangle": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "class-methods-use-this": "off",
+    "func-names": "off",
+    "consistent-return": "off",
+    "no-process-exit": "off",
+    "no-return-await": "off",
+    "object-shorthand": "off",
+    "spaced-comment": "off",
+
+    // Prefer destructuring only for objects
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+
+    // Ignore unused args typically found in Express handlers
+    "no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "req|res|next|err|val" }
+    ],
+
+    // Optional: Node.js rule overrides for flexibility
+    "node/no-unsupported-features/es-syntax": "off",
+    "node/no-missing-import": "off",
+    "node/no-unpublished-import": "off"
+  }
+}
